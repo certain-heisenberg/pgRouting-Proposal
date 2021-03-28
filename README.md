@@ -1,4 +1,4 @@
-# Cuthill-Mckee Algorithm:
+## Cuthill-Mckee Algorithm:
 
 
 
@@ -14,5 +14,6 @@ In the below gif following color represents different states of node:
 ```
 
 
-![download](https://user-images.githubusercontent.com/32921778/112770537-b4c64280-9044-11eb-8d17-defda81d0992.gif)
+![download (1)](https://user-images.githubusercontent.com/32921778/112771147-1a67fe00-9048-11eb-9d48-5384e699358a.gif)
+
 
