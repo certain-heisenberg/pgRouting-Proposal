@@ -17,23 +17,15 @@ int main(int, char *[]) {
   typedef graph_traits<Graph>::vertices_size_type size_type;
 
   typedef std::pair<std::size_t, std::size_t> Pair;
-  Pair edges[14] = {Pair(0, 3),  // a-d
-                    Pair(0, 5),  // a-f
-                    Pair(1, 2),  // b-c
-                    Pair(1, 4),  // b-e
-                    Pair(1, 6),  // b-g
-                    Pair(1, 9),  // b-j
-                    Pair(2, 3),  // c-d
-                    Pair(2, 4),  // c-e
-                    Pair(3, 5),  // d-f
-                    Pair(3, 8),  // d-i
-                    Pair(4, 6),  // e-g
-                    Pair(5, 6),  // f-g
-                    Pair(5, 7),  // f-h
-                    Pair(6, 7)}; // g-h
+  Pair edges[17] = {
+      Pair(0, 1),   Pair(1, 4),   Pair(4, 7), Pair(7, 6),  Pair(4, 5),
+      Pair(5, 2),   Pair(5, 8),   Pair(8, 3), Pair(8, 11), Pair(11, 10),
+      Pair(10, 5),  Pair(10, 9),  Pair(9, 4), Pair(9, 14), Pair(14, 12),
+      Pair(14, 13), Pair(15, 16),
+  };
 
-  Graph G(10);
-  for (int i = 0; i < 14; ++i)
+  Graph G(17);
+  for (int i = 0; i < 17; ++i)
     add_edge(edges[i].first, edges[i].second, G);
 
   graph_traits<Graph>::vertex_iterator ui, ui_end;
@@ -68,7 +60,7 @@ int main(int, char *[]) {
               << std::endl;
   }
   {
-    Vertex s = vertex(0, G);
+    Vertex s = vertex(6, G);
     // reverse cuthill_mckee_ordering
     cuthill_mckee_ordering(G, s, inv_perm.rbegin(), get(vertex_color, G),
                            get(vertex_degree, G));
